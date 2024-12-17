@@ -14,7 +14,7 @@ const Balance = () => {
     <>
       <h4 className="text-muted">Your Balance</h4>
       <h1 className={`display-4 ${balanceClass}`}>
-        {sign}RS. {Math.abs(total)}/-
+        {sign} RS. {Math.abs(total)}/-
       </h1>
     </>
   );

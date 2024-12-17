@@ -22,7 +22,7 @@ const IncomeExpenses = () => {
         <div className="card shadow-sm">
           <div className="card-body">
             <h4>Income</h4>
-            <p className="text-success display-6">+${income}</p>
+            <p className="text-success display-6">+ RS. {income}/-</p>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@ const IncomeExpenses = () => {
         <div className="card shadow-sm">
           <div className="card-body">
             <h4>Expense</h4>
-            <p className="text-danger display-6">-${expense}</p>
+            <p className="text-danger display-6">- RS. {expense}/-</p>
           </div>
         </div>
       </div>
