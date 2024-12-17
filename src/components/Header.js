@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Header = () => {
   return (
-    <h2>
-      Expense Tracker
-    </h2>
-  )
-}
+    <div className="bg-primary text-white py-3">
+      <h2 className="text-center">Expense Tracker</h2>
+    </div>
+  );
+};
 
-export default Header
+export default Header;

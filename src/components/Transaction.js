@@ -1,16 +1,28 @@
-import React, { useContext } from 'react';
-import { GlobalContext } from '../context/GlobalState';
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 
-const Transaction = (props) => {
-  const {DeleteTransaction} = useContext(GlobalContext);
+const Transaction = ({ transaction }) => {
+  const { DeleteTransaction } = useContext(GlobalContext);
 
-  const sign = props.transaction.amount <0?'-':'+'; 
+  const sign = transaction.amount < 0 ? "-" : "+";
+
   return (
-    <li className={props.transaction.amount < 0 ? 'minus': 'plus'}>
-        {props.transaction.text} <span>{sign} ${Math.abs(props.transaction.amount)}</span>
-        <button onClick={()=> DeleteTransaction(props.transaction.id)}className='delete-btn'>X</button>
+    <li
+      className={`list-group-item d-flex justify-content-between align-items-center ${
+        transaction.amount < 0 ? 'minus': 'plus'}`}
+    >
+      {transaction.text}{" "}
+      <span>
+        {sign}${Math.abs(transaction.amount)}
+      </span>
+      <button
+        className="btn btn-sm btn-danger"
+        onClick={() => DeleteTransaction(transaction.id)}
+      >
+        ×
+      </button>
     </li>
-  )
-}
+  );
+};
 
-export default Transaction
+export default Transaction;
