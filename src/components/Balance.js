@@ -8,12 +8,13 @@ const Balance = () => {
   const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
 
   const sign = total > 0 ? "+" : total < 0 ? "-" : ""; // Determine the sign
+  const balanceClass = total > 0 ? "text-success" : total < 0 ? "text-danger" : ""; // Assign color class
 
   return (
     <>
       <h4 className="text-muted">Your Balance</h4>
-      <h1 className="display-4">
-        {sign}${Math.abs(total)}
+      <h1 className={`display-4 ${balanceClass}`}>
+        {sign}RS. {Math.abs(total)}/-
       </h1>
     </>
   );
