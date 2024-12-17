@@ -7,10 +7,14 @@ const Balance = () => {
   const amounts = transactions.map((transaction) => transaction.amount);
   const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
 
+  const sign = total > 0 ? "+" : total < 0 ? "-" : ""; // Determine the sign
+
   return (
     <>
       <h4 className="text-muted">Your Balance</h4>
-      <h1 className="display-4">${total}</h1>
+      <h1 className="display-4">
+        {sign}${Math.abs(total)}
+      </h1>
     </>
   );
 };
